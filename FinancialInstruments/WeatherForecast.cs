@@ -1,4 +1,4 @@
-namespace FinancialInstruments
+namespace FinancialInstrumentsApi
 {
     public class WeatherForecast
     {
