@@ -12,6 +12,7 @@ namespace FinancialInstrumentsApi.Services
         private readonly IPriceCache _priceCache;
         private readonly ILogger<TiingoService> _logger;
         private ClientWebSocket _webSocket;
+        private readonly string _apiKey;
 
         public TiingoService(
             IConfiguration config,
@@ -45,7 +46,7 @@ namespace FinancialInstrumentsApi.Services
             var subscriptionMessage = new
             {
                 eventName = "subscribe",
-                authorization = _config["Tiingo:ApiKey"],
+                authorization = _config["ApiKey"],
                 eventData = new
                 {
                     thresholdLevel = 5,
