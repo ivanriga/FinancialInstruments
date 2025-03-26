@@ -1,11 +1,13 @@
 using FinancialInstrumentsApi.Models;
 using FinancialInstrumentsApi.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 
 namespace FinancialInstrumentsApi.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [EnableRateLimiting("MarketDataPolicy")]
     public class InstrumentsController : ControllerBase
     {
         private readonly IInstrumentPriceService _priceService;
